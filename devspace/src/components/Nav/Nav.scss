@@ -1,0 +1,34 @@
+.navbar {
+    background-color: black;
+    color: white;
+
+    h5 {
+        position: relative;
+        left: 3%;
+        top: 1px;
+    }
+    .links {
+        display: flex;
+        position: absolute;
+        left: 10%;
+        top: 0px;
+        .link {
+            margin: 10px;
+            text-decoration: none;
+            color: white;
+        }
+    }
+
+    .auth {
+        display: flex;
+
+        .auth-link {
+            position: relative;
+            right: 20px;
+            top: 3px;
+            margin-right: 10px;
+            text-decoration: none;
+            color: white;
+        }
+    }
+}
