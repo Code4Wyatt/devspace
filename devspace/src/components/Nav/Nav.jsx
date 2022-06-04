@@ -8,7 +8,7 @@ const Nav = () => {
       <div className="navbar">
         <h5>DevSpace</h5>
         <div className="links">
-          <Link to="/employers" className="link">
+          <Link to="/" className="link">
             <p>Employers</p>
           </Link>
           <Link to="/employers" className="link">

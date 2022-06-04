@@ -13,7 +13,7 @@ const AuthActionType = {
 const RegisterAuthAction = (userState, navigate, setErrorHandler) => {
   return async (dispatch) => {
     try {
-      const res = await axios.post("http://localhost:5000/auth/register", userState);
+      const res = await axios.post("http://localhost:9000/auth/developer-register", userState);
       const { data } = res;
       dispatch({ type: AuthActionType.REGISTER_SUCCESS, payload: data });
       navigate("/login");
