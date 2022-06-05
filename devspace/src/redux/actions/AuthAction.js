@@ -59,13 +59,13 @@ const LoginAuthAction = (loginState, navigate, setErrorHandler) => {
   return async (dispatch) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/auth/login",
+        "http://localhost:9000/auth/developer-login",
         loginState
       );
       console.log(res);
       const { data } = res;
       dispatch({ type: AuthActionType.LOGIN_SUCCESS, payload: data });
-      navigate("/timeline")
+      navigate("/")
     } catch (error) {
       console.log(error)
       if (error.response) {
@@ -102,8 +102,8 @@ const LogOutAuthAction = (history) => {
 };
 
 export {
-    AuthActionType,
-    RegisterEmployerAuthAction,
+  AuthActionType,
+  RegisterEmployerAuthAction,
   RegisterAuthAction,
   LogOutAuthAction,
   LoginAuthAction,

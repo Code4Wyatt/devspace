@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from '../../components/Nav/Nav'
-import DevLogin from '../../components/DevLogin/DevLogin'
-import EmployerLogin from '../../components/EmployerLogin/EmployerLogin'
+import DevRegister from '../../components/DevRegister/DevRegister'
+import EmployerRegister from '../../components/EmployerRegister/EmployerRegister'
 import './Register.scss'
 
 const Register = () => {
@@ -10,10 +10,10 @@ const Register = () => {
           <Nav />
           <div className="register-container"> 
               <div className="div-section">
-                  <DevLogin />
+                  <DevRegister />
             </div>
               <div>
-                 <EmployerLogin />
+                 <EmployerRegister />
             </div>
           </div>
           

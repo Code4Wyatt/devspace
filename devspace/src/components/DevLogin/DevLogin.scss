@@ -1,47 +1,10 @@
-.dev-container {
-  color: white;
-  height: 100vh;
+.sign-in-container {
+    width: 50%;
+    height: 100vh;
+    padding: 50px;
 
-  .sign-in-dev {
-    position: relative;
-    left: 42%;
-
-    .sign-in-link {
-      position: relative;
-      left: 40px;
+    .auth__submit {
+        border: 1px solid black;
+        margin-top: 20px;
     }
-  }
-  h3 {
-    position: relative;
-    left: 33%;
-    top: 10px;
-  }
-  .form-control {
-    width: 80%;
-    margin: 20px;
-    position: relative;
-    left: 6%;
-    top: 10px;
-  }
-  .form-group {
-    margin-top: -15px;
-    .sub-text {
-      position: relative;
-      left: 9%;
-    }
-  }
-
-  .register-button {
-    position: relative;
-    left: 45%;
-    width: 100px;
-    border-radius: 25px;
-    padding: 10px;
-    margin-top: 20px;
-  }
-  .form-label {
-    position: relative;
-    left: 9%;
-    top: 25px;
-  }
 }

@@ -1,17 +1,19 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router";
 import { RegisterEmployerAuthAction } from "../../redux/actions/AuthAction";
-import './EmployerLogin.scss'
-const EmployerLogin = (props) => {
-      const navigate = useNavigate();
+import "./EmployerRegister.scss";
+
+const EmployerRegister = (props) => {
+  const navigate = useNavigate();
   const { user, register } = props;
   const [userState, setUserstate] = useState({});
   const [errorHandler, setErrorHandler] = useState({
     hasError: false,
     message: "",
   });
+
   return (
     <div className="employer-container">
       <h3 className="font-weight-bold">Register As An Employer</h3>
@@ -104,8 +106,8 @@ const EmployerLogin = (props) => {
         </div> */}
       </form>
     </div>
-  )
-}
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -121,4 +123,4 @@ const mapDispatchToProps = (dispatch) => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(EmployerLogin)
+export default connect(mapStateToProps, mapDispatchToProps)(EmployerRegister);
