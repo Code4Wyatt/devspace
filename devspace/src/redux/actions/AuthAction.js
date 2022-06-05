@@ -31,6 +31,27 @@ const RegisterAuthAction = (userState, navigate, setErrorHandler) => {
     }
   };
 };
+const RegisterEmployerAuthAction = (userState, navigate, setErrorHandler) => {
+  return async (dispatch) => {
+    try {
+      const res = await axios.post("http://localhost:9000/auth/employer-register", userState);
+      const { data } = res;
+      dispatch({ type: AuthActionType.REGISTER_SUCCESS, payload: data });
+      navigate("/login");
+    } catch (error) {
+      if (error.response) {
+        dispatch({
+          type: AuthActionType.REGISTER_FAIL,
+          payload: error.response.data.message,
+        });
+        setErrorHandler({
+          hasError: true,
+          message: error.response.data.message,
+        });
+      }
+    }
+  };
+};
 
 const LoginAuthAction = (loginState, navigate, setErrorHandler) => {
   const API = process.env.API_URL;
@@ -81,7 +102,8 @@ const LogOutAuthAction = (history) => {
 };
 
 export {
-  AuthActionType,
+    AuthActionType,
+    RegisterEmployerAuthAction,
   RegisterAuthAction,
   LogOutAuthAction,
   LoginAuthAction,

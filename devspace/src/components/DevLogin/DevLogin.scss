@@ -1,51 +1,47 @@
 .dev-container {
-   color: white;
-   height: 100vh;
+  color: white;
+  height: 100vh;
 
-   .sign-in-dev {
-       position: relative;
-       left: 42%;
+  .sign-in-dev {
+    position: relative;
+    left: 42%;
 
-       .sign-in-link {
-           position: relative;
-           left: 40px;
-       }
-   }
-    h3 {
-        position: relative;
-        left: 33%;
-        top: 10px;
+    .sign-in-link {
+      position: relative;
+      left: 40px;
     }
-   .form-control {
-       width: 80%;
-       margin: 20px;
-       position: relative;
-       left: 6%;
-       top: 10px;
-
-       
-   }
-.form-group {
+  }
+  h3 {
+    position: relative;
+    left: 33%;
+    top: 10px;
+  }
+  .form-control {
+    width: 80%;
+    margin: 20px;
+    position: relative;
+    left: 6%;
+    top: 10px;
+  }
+  .form-group {
     margin-top: -15px;
-.sub-text {
-        position: relative;
-        left: 9%;
+    .sub-text {
+      position: relative;
+      left: 9%;
     }
-}
-   
+  }
 
-   .register-button {
-       position: relative;
-       left: 45%;
-       width: 100px;
-       border-radius: 25px;
-       padding: 10px;
-       margin-top: 20px;
-   }
-   .form-label {
-       position: relative;
-       left: 9%;
-       top: 25px;
-   }
-  
+  .register-button {
+    position: relative;
+    left: 45%;
+    width: 100px;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .form-label {
+    position: relative;
+    left: 9%;
+    top: 25px;
+  }
 }

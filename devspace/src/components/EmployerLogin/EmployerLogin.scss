@@ -1,8 +1,18 @@
 .employer-container {
-    color: white;
-height: 100vh;
-background-color: green;
-width: 50vw;
+    color: rgb(12, 10, 10);
+    height: 100vh;
+    width: 50vw;
+
+    .sign-in-employer {
+        position: relative;
+        left: 42%;
+
+        .sign-in-link {
+            position: relative;
+            left: 40px;
+        }
+    }
+
     h3 {
         position: relative;
         left: 33%;
@@ -17,4 +27,27 @@ width: 50vw;
         top: 10px;
     }
 
+    .form-group {
+        margin-top: -15px;
+
+        .sub-text {
+            position: relative;
+            left: 9%;
+        }
+    }
+
+    .register-button {
+        position: relative;
+        left: 45%;
+        width: 100px;
+        border-radius: 25px;
+        padding: 10px;
+        margin-top: 20px;
+    }
+
+    .form-label {
+        position: relative;
+        left: 9%;
+        top: 25px;
+    }
 }
