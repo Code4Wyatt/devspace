@@ -7,7 +7,7 @@ import './Register.scss'
 const Register = () => {
   return (
       <>
-          <Nav />
+         
           <div className="register-container"> 
               <div className="div-section">
                   <DevRegister />

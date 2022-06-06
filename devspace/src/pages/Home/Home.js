@@ -1,7 +1,8 @@
+import './Home.scss'
+import { useState, useEffect } from "react"
+import { useSelector, connect, useDispatch } from "react-redux"
+import { addCurrentUserAction } from "../../redux/actions/UserAction"
 import Nav from "../../components/Nav/Nav"
-import { useState, useEffect } from "react";
-import { useSelector, connect, useDispatch } from "react-redux";
-import { addCurrentUserAction } from "../../redux/actions/UserAction";
 
 const Home = (props) => {
   const [profile, setProfile] = useState([]);
@@ -42,7 +43,7 @@ const Home = (props) => {
 
   return (
       <>
-        <Nav />
+        
       </>
   )
 }

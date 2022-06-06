@@ -7,10 +7,12 @@ import {
 import Home from "./pages/Home/Home.js"
 import Register from "./pages/Register/Register.js"
 import Login from "./pages/Login/Login.js"
+import Nav from "../src/components/Nav/Nav"
 
 function App() {
   return (
    <Router>
+     <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />

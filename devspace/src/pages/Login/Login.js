@@ -6,7 +6,7 @@ import DevLogin from '../../components/DevLogin/DevLogin'
 const Login = () => {
   return (
       <>
-          <Nav />
+          
           <div className="login-container">
               <div>
                 <DevLogin />
