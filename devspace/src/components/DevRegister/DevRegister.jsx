@@ -4,6 +4,10 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { useNavigate } from "react-router";
 import { RegisterAuthAction } from "../../redux/actions/AuthAction";
+import {
+  TextField
+} from "@material-ui/core"
+import { StylesProvider } from "@material-ui/core/styles";
 
 const DevRegister = (props) => {
   const navigate = useNavigate();
@@ -15,7 +19,8 @@ const DevRegister = (props) => {
   });
 
   return (
-    <div className="dev-container">
+    <StylesProvider injectFirst>
+      <div className="dev-container">
       <h3 className="font-weight-bold">Register As A Developer</h3>
       <div className="sign-in-dev">
         Already a member?
@@ -32,10 +37,12 @@ const DevRegister = (props) => {
         <div className="form-group">
           <div className="form-row">
             <div className="col">
-              <label htmlFor="InputFirstName" className="form-label">
-                First Name
-              </label>
-              <input
+              
+              <TextField id="standard-basic" label="First Name" variant="standard" placeholder="John" onChange={(event) => {
+                  const firstName = event.target.value;
+                  setUserstate({ ...userState, ...{ firstName } });
+                }} />
+              {/* <input
                 type="text"
                 className="form-control"
                 placeholder="First Name"
@@ -43,17 +50,19 @@ const DevRegister = (props) => {
                   const firstName = event.target.value;
                   setUserstate({ ...userState, ...{ firstName } });
                 }}
-              />
+              /> */}
             </div>
           </div>
         </div>
         <div className="form-group">
           <div className="form-row">
             <div className="col">
-              <label htmlFor="InputEmail" className="form-label">
-                Last Name
-              </label>
-              <input
+              
+              <TextField id="standard-basic" label="Last Name" variant="standard" placeholder="Cena" onChange={(event) => {
+                  const lastName = event.target.value;
+                  setUserstate({ ...userState, ...{ lastName } });
+                }} />
+              {/* <input
                 type="text"
                 className="form-control "
                 placeholder="Last Name"
@@ -61,51 +70,32 @@ const DevRegister = (props) => {
                   const lastName = event.target.value;
                   setUserstate({ ...userState, ...{ lastName } });
                 }}
-              />
+              /> */}
             </div>
           </div>
         </div>
         <div className="form-group">
-          <label htmlFor="InputEmail" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            placeholder="Email address"
-            className="form-control"
-            onChange={(event) => {
+          <TextField id="standard-basic" label="Email Address" variant="standard" placeholder="joncena@outlook.com" onChange={(event) => {
               const email = event.target.value;
               setUserstate({ ...userState, ...{ email } });
-            }}
-          />
-          <small id="emailHelp" className="sub-text">
-            We'll never share your email with anyone else.
-          </small>
+            }} />
+          
         </div>
         <div className="form-group">
-          <label htmlFor="InputPassword1" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            placeholder="Password"
-            className="form-control"
-            onChange={(event) => {
+          
+          <TextField id="standard-basic" label="Password" variant="standard" placeholder="Enter Password" onChange={(event) => {
               const password = event.target.value;
               setUserstate({ ...userState, ...{ password } });
-            }}
-          />
+            }} />
         </div>
         <button type="submit" className="register-button">
           Register
         </button>
-        {/* <div className="login-social-media py-3">
-          <button className="btn btn-primary btn-block btn-sm">
-            Continue with Google
-          </button>
-        </div> */}
+        
       </form>
     </div>
+    </StylesProvider>
+    
   );
 };
 

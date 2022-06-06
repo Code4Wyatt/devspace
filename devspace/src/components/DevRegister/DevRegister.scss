@@ -24,7 +24,8 @@
     top: 10px;
   }
   .form-group {
-    margin-top: -15px;
+    margin-top: 25px;
+    margin-left: 10%;
     .sub-text {
       position: relative;
       left: 9%;
@@ -42,6 +43,21 @@
   .form-label {
     position: relative;
     left: 9%;
-    top: 25px;
+    top: 15px;
   }
+}
+
+.MuiFormLabel-root {
+  color: white;
+  z-index: 1;
+  position: relative;
+  left: 35px;
+  top: 15px;
+}
+
+.MuiInputBase-root {
+  color: white;
+  width: 270%;
+  position: relative;
+  left: 15%;
 }
