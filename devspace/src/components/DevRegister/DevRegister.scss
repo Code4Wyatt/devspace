@@ -1,14 +1,26 @@
 .dev-container {
   color: white;
   height: 100vh;
+  position: relative;
+  
 
   .sign-in-dev {
     position: relative;
-    left: 42%;
-
+    left: 44%;
+    top: 20px;
+    text-decoration: none;
     .sign-in-link {
       position: relative;
-      left: 40px;
+      left: 25px;
+      margin-top: 10px;
+      border: 1px solid black;
+      width: 70px;
+      border-radius: 25px;
+      padding: 5px;
+      text-align: center;
+      background-color: #204674;
+      text-decoration: none;
+      
     }
   }
   h3 {
@@ -25,7 +37,7 @@
   }
   .form-group {
     margin-top: 25px;
-    margin-left: 10%;
+    margin-left: 20%;
     .sub-text {
       position: relative;
       left: 9%;
@@ -39,6 +51,10 @@
     border-radius: 25px;
     padding: 10px;
     margin-top: 20px;
+    background-color: #204674;
+    color: #F2BD4D;
+    font-weight: 550;
+    border: 1px solid #F2BD4D;
   }
   .form-label {
     position: relative;

@@ -22,12 +22,7 @@ const DevRegister = (props) => {
     <StylesProvider injectFirst>
       <div className="dev-container">
       <h3 className="font-weight-bold">Register As A Developer</h3>
-      <div className="sign-in-dev">
-        Already a member?
-        <Link to="/login">
-          <h6 className="sign-in-link">Sign In</h6>
-        </Link>
-      </div>
+      
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -91,7 +86,12 @@ const DevRegister = (props) => {
         <button type="submit" className="register-button">
           Register
         </button>
-        
+        <div className="sign-in-dev">
+        Already a developer?
+        <Link to="/login">
+          <h6 className="sign-in-link">Login</h6>
+        </Link>
+      </div>
       </form>
     </div>
     </StylesProvider>

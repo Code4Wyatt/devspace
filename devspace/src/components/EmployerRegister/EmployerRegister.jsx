@@ -4,7 +4,10 @@ import { connect } from "react-redux";
 import { useNavigate } from "react-router";
 import { RegisterEmployerAuthAction } from "../../redux/actions/AuthAction";
 import "./EmployerRegister.scss";
-
+import { StylesProvider } from "@material-ui/core/styles";
+import {
+  TextField
+} from "@material-ui/core"
 const EmployerRegister = (props) => {
   const navigate = useNavigate();
   const { user, register } = props;
@@ -15,14 +18,10 @@ const EmployerRegister = (props) => {
   });
 
   return (
-    <div className="employer-container">
+    <StylesProvider injectFirst>
+      <div className="employer-container">
       <h3 className="font-weight-bold">Register As An Employer</h3>
-      <div className="sign-in-employer">
-        Already a member?
-        <Link to="/login">
-          <h6 className="sign-in-link">Sign In</h6>
-        </Link>
-      </div>
+      
       <form
         onSubmit={(event) => {
           event.preventDefault();
@@ -32,73 +31,48 @@ const EmployerRegister = (props) => {
         <div className="form-group">
           <div className="form-row">
             <div className="col">
-              <label htmlFor="InputFirstName" className="form-label">
-                Company Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Enter Company Name"
-                onChange={(event) => {
+            <TextField id="standard-basic" label="Company Name" variant="standard" placeholder="Enter Company Name" onChange={(event) => {
                   const companyName = event.target.value;
                   setUserstate({ ...userState, ...{ companyName } });
-                }}
-              />
+                }} />
             </div>
           </div>
         </div>
         <div className="form-group">
           <div className="form-row">
             <div className="col">
-              <label htmlFor="InputEmail" className="form-label">
-                Contact Name
-              </label>
-              <input
-                type="text"
-                className="form-control "
-                placeholder="Enter Recruiter Contact Name"
-                onChange={(event) => {
+            <TextField id="standard-basic" label="Contact Name" variant="standard" placeholder="Enter Recruiter Contact Name" onChange={(event) => {
                   const contactName = event.target.value;
                   setUserstate({ ...userState, ...{ contactName } });
-                }}
-              />
+                }} />
+              
             </div>
           </div>
         </div>
         <div className="form-group">
-          <label htmlFor="InputEmail" className="form-label">
-            Email address
-          </label>
-          <input
-            type="email"
-            placeholder="Email address"
-            className="form-control"
-            onChange={(event) => {
-              const email = event.target.value;
-              setUserstate({ ...userState, ...{ email } });
-            }}
-          />
-          <small id="emailHelp" className="sub-text">
-            We'll never share your email with anyone else.
-          </small>
+        <TextField id="standard-basic" label="Email Address" variant="standard" placeholder="Email Address" onChange={(event) => {
+                  const email = event.target.value;
+                  setUserstate({ ...userState, ...{ email } });
+                }} />
+        
+        
         </div>
         <div className="form-group">
-          <label htmlFor="InputPassword1" className="form-label">
-            Password
-          </label>
-          <input
-            type="password"
-            placeholder="Password"
-            className="form-control"
-            onChange={(event) => {
-              const password = event.target.value;
-              setUserstate({ ...userState, ...{ password } });
-            }}
-          />
+        <TextField id="standard-basic" label="Password" variant="standard" placeholder="Enter Password" onChange={(event) => {
+                  const password = event.target.value;
+                  setUserstate({ ...userState, ...{ password } });
+                }} />
+         
         </div>
         <button type="submit" className="register-button">
           Register
         </button>
+        <div className="sign-in-employer">
+        Already an employer?
+        <Link to="/login">
+          <h6 className="sign-in-link">Login</h6>
+        </Link>
+      </div>
         {/* <div className="login-social-media py-3">
           <button className="btn btn-primary btn-block btn-sm">
             Continue with Google
@@ -106,6 +80,8 @@ const EmployerRegister = (props) => {
         </div> */}
       </form>
     </div>
+    </StylesProvider>
+    
   );
 };
 

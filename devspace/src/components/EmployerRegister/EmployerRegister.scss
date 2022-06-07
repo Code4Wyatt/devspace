@@ -5,11 +5,21 @@
 
     .sign-in-employer {
         position: relative;
-        left: 42%;
+        left: 43%;
+        top: 20px;
+        text-decoration: none;
 
         .sign-in-link {
             position: relative;
-            left: 40px;
+            left: 35px;
+            margin-top: 10px;
+            border: 1px solid black;
+            width: 70px;
+            border-radius: 25px;
+            padding: 5px;
+            text-align: center;
+            background-color: #204674;
+            text-decoration: none;
         }
     }
 
@@ -28,12 +38,14 @@
     }
 
     .form-group {
-        margin-top: -15px;
+        margin-top: 25px;
+        margin-left: 20%;
 
         .sub-text {
             position: relative;
             left: 9%;
         }
+
     }
 
     .register-button {
@@ -43,6 +55,9 @@
         border-radius: 25px;
         padding: 10px;
         margin-top: 20px;
+        background-color: #204674;
+        color: #F2BD4D;
+        border: 1px solid #F2BD4D;
     }
 
     .form-label {
