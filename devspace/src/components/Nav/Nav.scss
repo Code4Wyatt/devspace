@@ -1,7 +1,11 @@
+.nav-section {
+    z-index: 2000 !important;
+}
+
 .navbar {
     background-color: black;
     color: white;
-
+    
     h5 {
         position: relative;
         left: 3%;
@@ -9,7 +13,7 @@
     }
     .links {
         display: flex;
-        position: absolute;
+        position: relative;
         left: 10%;
         top: 0px;
         .link {

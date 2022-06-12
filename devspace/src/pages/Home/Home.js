@@ -3,6 +3,9 @@ import { useState, useEffect } from "react"
 import { useSelector, connect, useDispatch } from "react-redux"
 import { addCurrentUserAction } from "../../redux/actions/UserAction"
 import Nav from "../../components/Nav/Nav"
+import abstract from "../../assets/abstract.png";
+import geometric from "../../assets/geometric.png";
+import {Box} from "@material-ui/core"
 
 const Home = (props) => {
   const [profile, setProfile] = useState([]);
@@ -43,7 +46,10 @@ const Home = (props) => {
 
   return (
       <>
-        
+      <div className="main">
+      {/* <img src={abstract} className="abstract" /> */}
+      </div>
+      
       </>
   )
 }

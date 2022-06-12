@@ -13,25 +13,25 @@ import DrawerComponent from "../Drawer/Drawer";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
-    backgroundColor: "black",
-    borderBottom: "1px solid black",
+    
+    zIndex: 1250,
   },
   navlinks: {
-    marginLeft: theme.spacing(5),
+    marginLeft: theme.spacing(15),
     display: "flex",
-    position: "fixed",
-    left: "100px",
+    position: "absolute",
+    width: "100%",
   },
   auth: {
     display: "flex",
-    position: "fixed",
-    right: "20px",
+    position: "absolute",
+    right: "200px",
+    
   },
   logo: {
     flexGrow: "1",
     cursor: "pointer",
     color: "#F2BD4D",
-
   },
   drawer: {
     color: "white"
@@ -55,7 +55,8 @@ const Nav = () => {
 
   return (
     <>
-      <AppBar position="static" className={classes.navbar}>
+    <div className="nav-section">
+    <AppBar position="static" className={classes.navbar}>
         <CssBaseline />
         <Toolbar>
           <Typography variant="h5" className={classes.logo}>
@@ -65,6 +66,7 @@ const Nav = () => {
             <DrawerComponent  />
           ) : (
             <div className={classes.navlinks}>
+              <div className={classes.left}>
               <Link to="/" className={classes.link}>
                 Home
               </Link>
@@ -81,6 +83,8 @@ const Nav = () => {
               <Link to="/faq" className={classes.link}>
                 FAQ
               </Link>
+              </div>
+              
               <div className={classes.auth}>
                 <Link to="/login" className={classes.link}>
                   Login
@@ -94,6 +98,8 @@ const Nav = () => {
           )}
         </Toolbar>
       </AppBar>
+    </div>
+      
 
       {/* <div className="navbar">
         <h5>DevSpace</h5>
