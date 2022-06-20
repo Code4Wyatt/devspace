@@ -5,7 +5,7 @@ import { addCurrentUserAction } from "../../redux/actions/UserAction"
 import Nav from "../../components/Nav/Nav"
 import abstract from "../../assets/abstract.png"
 import geometric from "../../assets/geometric.png"
-import Grid from "@material-ui/core/Grid"
+import { Container } from "@material-ui/core"
 
 const Home = (props) => {
   const [profile, setProfile] = useState([]);
@@ -45,26 +45,20 @@ const Home = (props) => {
   }, []);
 
   return (
-      <>
+    <>
       <div className="main">
-      <img src={abstract} className="abstract" />
-      <Grid container spacing={2}>
-  <Grid item xs={8}>
-    <Item>xs=8</Item>
-  </Grid>
-  <Grid item xs={4}>
-    <Item>xs=4</Item>
-  </Grid>
-  <Grid item xs={4}>
-    <Item>xs=4</Item>
-  </Grid>
-  <Grid item xs={8}>
-    <Item>xs=8</Item>
-  </Grid>
-</Grid>
+        <img src={abstract} className="abstract" />
+
+        <div className="home__banner">
+        <h1 className="home__banner-text animate-charcter2">Discover developers.</h1>
+          <h1 className="home__banner-subtitle animate-charcter">
+            Engage with employers.
+          </h1>
+        </div>
+          
       </div>
-      
-      </>
+
+    </>
   )
 }
 

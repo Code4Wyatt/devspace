@@ -1,9 +1,11 @@
 .nav-section {
-    z-index: 2000 !important;
+    z-index: 2 !important;
+    background-color: #22254B;
+    position: fixed;
+    width: 100vw;
 }
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0) !important;
     color: white;
 
     h5 {
