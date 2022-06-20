@@ -3,9 +3,11 @@
 }
 
 .abstract {
- 
     position: fixed;
-    top: -40px;
-    z-index: 0;
-  
+    height: 120%;
+    
+    top: -130px;
+    left: -140px;
+    z-index: -3000;
+    transform: rotate(-360deg);
 }

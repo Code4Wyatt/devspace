@@ -10,11 +10,13 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "../Drawer/Drawer";
+import { red } from "@mui/material/colors";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
+    backgroundColor: "transparent",
     
-    zIndex: 1250,
+    
   },
   navlinks: {
     marginLeft: theme.spacing(15),
@@ -31,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     flexGrow: "1",
     cursor: "pointer",
-    color: "#F2BD4D",
+    color: "#F2BD4B",
   },
   drawer: {
     color: "white"

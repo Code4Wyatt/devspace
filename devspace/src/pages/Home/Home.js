@@ -3,9 +3,9 @@ import { useState, useEffect } from "react"
 import { useSelector, connect, useDispatch } from "react-redux"
 import { addCurrentUserAction } from "../../redux/actions/UserAction"
 import Nav from "../../components/Nav/Nav"
-import abstract from "../../assets/abstract.png";
-import geometric from "../../assets/geometric.png";
-import {Box} from "@material-ui/core"
+import abstract from "../../assets/abstract.png"
+import geometric from "../../assets/geometric.png"
+import Grid from "@material-ui/core/Grid"
 
 const Home = (props) => {
   const [profile, setProfile] = useState([]);
@@ -47,7 +47,21 @@ const Home = (props) => {
   return (
       <>
       <div className="main">
-      {/* <img src={abstract} className="abstract" /> */}
+      <img src={abstract} className="abstract" />
+      <Grid container spacing={2}>
+  <Grid item xs={8}>
+    <Item>xs=8</Item>
+  </Grid>
+  <Grid item xs={4}>
+    <Item>xs=4</Item>
+  </Grid>
+  <Grid item xs={4}>
+    <Item>xs=4</Item>
+  </Grid>
+  <Grid item xs={8}>
+    <Item>xs=8</Item>
+  </Grid>
+</Grid>
       </div>
       
       </>

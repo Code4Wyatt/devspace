@@ -3,19 +3,21 @@
 }
 
 .navbar {
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0) !important;
     color: white;
-    
+
     h5 {
         position: relative;
         left: 3%;
         top: 1px;
     }
+
     .links {
         display: flex;
         position: relative;
         left: 10%;
         top: 0px;
+
         .link {
             margin: 10px;
             text-decoration: none;
