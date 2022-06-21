@@ -1,40 +1,69 @@
-
-
-
-.main {
-    background-color: #22254B;
-    height: 100vh;
-    
-   
+main {
+  background-color: #22254b;
+  height: 100vh;
 }
 .abstract {
-    position: absolute;
-    height: 100vw;
-    
-    top: -130px;
-    left: -140px;
-    z-index: 0;
-    transform: rotate(-360deg);
+  position: relative;
+  height: 50vw;
+  top: -100px;
+  z-index: 4;
+  transform: rotate(-360deg);
 }
 
-.home__banner{
+.home__banner {
+  position: relative;
+  top: 5%;
+  height: 40%;
+  z-index: 1;
+
+  .home__banner-text {
     position: absolute;
-    right: 100px !important;
-    .home__banner-text {
-        width: 100%;
-        background-color: rgba(255, 0, 0, 0) !important;
-        
-        
+    top: 20%;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .home__banner-subtitle {
+    position: absolute;
+    top: 40%;
+    font-size: 5vw;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.mission__statement-grid {
+  
+  width: 500px;
+}
+.mission__statement {
+  position: relative;
+  background-color: rgba(198, 24, 24, 0.182);
+  z-index: 15;
+  width: 100%;
+  height: 100%;
+
+  .mission__statement-statement {
+    text-align: center;
+    padding: 60px;
+    text-transform: uppercase;
+  }
+
+  .mission__statement-cards {
+    margin: 100px;
+    padding: 5px;
+    background-color:rgba(255, 255, 255, 0.203);
+
+    p {
+color: black;
     }
-
-
-   
-}
-   
     
-.animate-charcter
-{
-   text-transform: uppercase;
+  }
+}
+
+.animate-charcter {
+  text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
     #c7c54e 0%,
@@ -47,20 +76,18 @@
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
-  text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 12s linear infinite;
   display: inline-block;
-      font-size: 60px;
-      position: relative;
-      top: 450px;
-      left: 20%;
+  font-size: 60px;
+  position: relative;
+  top: 450px;
+  left: 20%;
 }
 
-.animate-charcter2
-{
-   text-transform: uppercase;
+.animate-charcter2 {
+  text-transform: uppercase;
   background-image: linear-gradient(
     -225deg,
     #c7c54e 0%,
@@ -72,15 +99,15 @@
   background-clip: border-box;
   background-size: 200% auto;
   color: #fff;
- 
+
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: textclip 12s linear infinite;
   display: inline-block;
-      font-size: 60px;
-      position: relative;
-      top: 450px;
-      left: 20%;
+  font-size: 60px;
+  position: relative;
+  top: 450px;
+  left: 20%;
 }
 
 @keyframes textclip {
