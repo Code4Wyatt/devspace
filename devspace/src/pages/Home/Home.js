@@ -102,13 +102,14 @@ const Home = (props) => {
             </Grid>
           </Grid>
         </div>
-        {/* <div>
-          <Typography variant="h4" component="h4">
-            Our mission is to unite newfound talent in technology, with the most
-            suited position. Aiming to make the process easier for both finding
-            that dream role, or desired developer.
+        <div className="goal__section">
+          <Typography variant="h2" component="h4" className="animate-charcter3">
+            THE GOAL
           </Typography>
-        </div> */}
+          <Typography variant="h6" component="h4" className="goal__section-text">
+            To provide additional tools and features with the aim of streamlining the process for both developers seeking their introduction to the industry and recruiters seeking their next new talent.
+          </Typography>
+        </div>
       </main>
     </>
   );

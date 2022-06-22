@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "15px",
     marginLeft: theme.spacing(5),
     "&:hover": {
-      color: "#F2BD4D",
+      color: "#49BACC",
       borderBottom: "1px solid white",
     },
   },
