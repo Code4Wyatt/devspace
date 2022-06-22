@@ -83,7 +83,7 @@ const LoginAuthAction = (loginState, navigate, setErrorHandler) => {
 const LogOutAuthAction = (history) => {
   return async (dispatch) => {
     try {
-      const res = await axios.get("/logout");
+      const res = await axios.delete("http://localhost:9000/auth/logout");
       const { data } = res;
       dispatch({
         type: AuthActionType.LOGOUT_SUCCESS,
@@ -93,7 +93,7 @@ const LogOutAuthAction = (history) => {
     } catch (error) {
       if (error.response) {
         dispatch({
-          typetype: AuthActionType.LOGIN_FAIL,
+          type: AuthActionType.LOGOUT_FAIL,
           payload: error.response.data.message,
         });
       }
