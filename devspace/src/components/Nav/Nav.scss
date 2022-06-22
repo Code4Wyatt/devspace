@@ -5,6 +5,11 @@
     width: 100vw;
 }
 
+.nav-menu {
+    position: relative;
+    bottom: 5px;
+}
+
 .navbar {
     color: white;
 
@@ -29,7 +34,12 @@
 
     .auth {
         display: flex;
-
+        
+        p {
+            position: relative;
+            right: 110px !important;
+        }
+        
         .auth-link {
             position: relative;
             right: 20px;

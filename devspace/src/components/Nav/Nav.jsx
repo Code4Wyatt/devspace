@@ -19,6 +19,7 @@ import MenuItem from "@mui/material/MenuItem";
 import { LogOutAuthAction } from "../../redux/actions/AuthAction";
 import { useNavigate } from "react-router";
 import { connect } from "react-redux";
+import { removeCurrentUserAction } from "../../redux/actions/UserAction";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
@@ -76,6 +77,7 @@ const Nav = (props) => {
     message: "",
   });
   const authLocalStorage = localStorage.getItem("auth");
+  const jwtToken = useSelector((state) => state.authState.user.accessToken);
 
   console.log("User: ", user);
   console.log(user[0].data.currentUser.firstName);
@@ -100,10 +102,10 @@ const Nav = (props) => {
                   <Link to="/developers" className={classes.link}>
                     Developers
                   </Link>
-                  <Link to="/contact" className={classes.link}>
+                  <Link to="/employers" className={classes.link}>
                     Employers
                   </Link>
-                  <Link to="/contact" className={classes.link}>
+                  <Link to="/roles" className={classes.link}>
                     Roles
                   </Link>
 
@@ -113,10 +115,11 @@ const Nav = (props) => {
                 </div>
                 {authLocalStorage ? (
                   <div className={classes.auth}>
-                    Welcome, {user[0].data.currentUser.firstName}
+                    <p className="auth">Welcome, {user[0].data.currentUser.firstName}</p>
                     <div>
                       <Button
-                        id="basic-button"
+                          id="basic-button"
+                          className="nav-menu"
                         aria-controls={open ? "basic-menu" : undefined}
                         aria-haspopup="true"
                         aria-expanded={open ? "true" : undefined}
@@ -208,7 +211,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     logout: (loginState, history, setErrorHandler) => {
-      dispatch(LogOutAuthAction(loginState, history, setErrorHandler));
+      dispatch(removeCurrentUserAction(loginState, history, setErrorHandler));
     },
   };
 };
