@@ -4,10 +4,11 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
+import Nav from "../src/components/Nav/Nav"
 import Home from "./pages/Home/Home.js"
 import Register from "./pages/Register/Register.js"
 import Login from "./pages/Login/Login.js"
-import Nav from "../src/components/Nav/Nav"
+import Developers from "./pages/Developers/Developers.js"
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/developers" element={<Developers />} />
       </Routes>
     </Router>
   );

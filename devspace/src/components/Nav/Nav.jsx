@@ -10,13 +10,11 @@ import {
 } from "@material-ui/core";
 import { Link } from "react-router-dom";
 import DrawerComponent from "../Drawer/Drawer";
-import { red } from "@mui/material/colors";
+import { useSelector } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
     backgroundColor: "transparent",
-    
-    
   },
   navlinks: {
     marginLeft: theme.spacing(15),
@@ -28,15 +26,14 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     position: "absolute",
     right: "200px",
-    
   },
   logo: {
     flexGrow: "1",
     cursor: "pointer",
-    color: "#AE2052",
+    color: "white",
   },
   drawer: {
-    color: "white"
+    color: "white",
   },
   link: {
     textDecoration: "none",
@@ -53,55 +50,62 @@ const useStyles = makeStyles((theme) => ({
 const Nav = () => {
   const classes = useStyles();
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"))
+  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  const user = useSelector((state) => state.currentUser.user);
+  console.log("User: ", user);
+  console.log(user[0].data.currentUser.firstName);
 
   return (
     <>
-    <div className="nav-section">
-    <AppBar position="static" className={classes.navbar}>
-        <CssBaseline />
-        <Toolbar>
-          <Typography variant="h5" className={classes.logo}>
-            DevHire
-          </Typography>
-          {isMobile ? (
-            <DrawerComponent  />
-          ) : (
-            <div className={classes.navlinks}>
-              <div className={classes.left}>
-              <Link to="/" className={classes.link}>
-                Home
-              </Link>
-              <Link to="/about" className={classes.link}>
-                Developers
-              </Link>
-              <Link to="/contact" className={classes.link}>
-                Employers
-              </Link>
-              <Link to="/contact" className={classes.link}>
-                Roles
-              </Link>
+      <div className="nav-section">
+        <AppBar position="static" className={classes.navbar}>
+          <CssBaseline />
+          <Toolbar>
+            <Typography variant="h5" className={classes.logo}>
+              DevSpace
+            </Typography>
+            {isMobile ? (
+              <DrawerComponent />
+            ) : (
+              <div className={classes.navlinks}>
+                <div className={classes.left}>
+                  <Link to="/" className={classes.link}>
+                    Home
+                  </Link>
+                  <Link to="/developers" className={classes.link}>
+                    Developers
+                  </Link>
+                  <Link to="/contact" className={classes.link}>
+                    Employers
+                  </Link>
+                  <Link to="/contact" className={classes.link}>
+                    Roles
+                  </Link>
 
-              <Link to="/faq" className={classes.link}>
-                FAQ
-              </Link>
+                  <Link to="/faq" className={classes.link}>
+                    FAQ
+                  </Link>
+                </div>
+                {user ? (
+                  <div className={classes.auth}>
+                      Welcome,  {user[0].data.currentUser.firstName}
+                      
+                  </div>
+                ) : (
+                  <div className={classes.auth}>
+                    <Link to="/login" className={classes.link}>
+                      Login
+                    </Link>
+                    <Link to="/register" className={classes.link}>
+                      Register
+                    </Link>
+                  </div>
+                )}
               </div>
-              
-              <div className={classes.auth}>
-                <Link to="/login" className={classes.link}>
-                  Login
-                </Link>
-                <Link to="/register" className={classes.link}>
-                  Register
-                </Link>
-              </div>
-            </div>
-
-          )}
-        </Toolbar>
-      </AppBar>
-    </div>
-      
+            )}
+          </Toolbar>
+        </AppBar>
+      </div>
 
       {/* <div className="navbar">
         <h5>DevSpace</h5>

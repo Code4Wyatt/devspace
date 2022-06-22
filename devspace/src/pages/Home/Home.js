@@ -7,6 +7,8 @@ import abstract from "../../assets/abstract.png";
 import geometric from "../../assets/geometric.png";
 import global from "../../assets/global.png";
 import network from "../../assets/network.png";
+import globalNetwork from "../../assets/global-network.png";
+import statistics from "../../assets/bar-chart.png";
 import { Container, Grid, Card, Typography } from "@material-ui/core";
 
 const Home = (props) => {
@@ -74,6 +76,7 @@ const Home = (props) => {
             className="mission__statement-grid"
           >
             <Grid item xs={4}>
+              <img src={global} className="global"/>
               <Typography
                 variant="h4"
                 component="h2"
@@ -83,6 +86,7 @@ const Home = (props) => {
               </Typography>
             </Grid>
             <Grid item xs={4}>
+              <img src={globalNetwork} className="connect" />
               <Typography
                 variant="h4"
                 component="h2"
@@ -92,6 +96,7 @@ const Home = (props) => {
               </Typography>
             </Grid>
             <Grid item xs={4}>
+              <img src={statistics} className="portal" />
               <Typography
                 variant="h2"
                 component="h2"
@@ -103,10 +108,10 @@ const Home = (props) => {
           </Grid>
         </div>
         <div className="goal__section">
-          <Typography variant="h2" component="h4" className="animate-charcter3">
+          <Typography variant="h2" component="h4" className="animate-charcter3 goal__section-title">
             THE GOAL
           </Typography>
-          <Typography variant="h6" component="h4" className="goal__section-text">
+          <Typography variant="h8" component="h4" className="goal__section-text">
             To provide additional tools and features with the aim of streamlining the process for both developers seeking their introduction to the industry and recruiters seeking their next new talent.
           </Typography>
         </div>
