@@ -1,4 +1,5 @@
 import "./Nav.scss";
+import { useState } from "react";
 import {
   AppBar,
   Toolbar,
@@ -11,6 +12,13 @@ import {
 import { Link } from "react-router-dom";
 import DrawerComponent from "../Drawer/Drawer";
 import { useSelector } from "react-redux";
+import { Dropdown } from "react-bootstrap";
+import Button from "@mui/material/Button";
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { LogOutAuthAction } from "../../redux/actions/AuthAction";
+import { useNavigate } from "react-router";
+import { connect } from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   navbar: {
@@ -47,11 +55,27 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Nav = () => {
+const Nav = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const user = useSelector((state) => state.currentUser.user);
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+  const { logout } = props;
+  const [loginState, setLoginState] = useState({});
+  const navigate = useNavigate();
+  const [errorHandler, setErrorHandler] = useState({
+    hasError: false,
+    message: "",
+  });
+
   console.log("User: ", user);
   console.log(user[0].data.currentUser.firstName);
 
@@ -88,8 +112,50 @@ const Nav = () => {
                 </div>
                 {user ? (
                   <div className={classes.auth}>
-                      Welcome,  {user[0].data.currentUser.firstName}
-                      
+                    Welcome, {user[0].data.currentUser.firstName}
+                    <div>
+                      <Button
+                        id="basic-button"
+                        aria-controls={open ? "basic-menu" : undefined}
+                        aria-haspopup="true"
+                        aria-expanded={open ? "true" : undefined}
+                        onClick={handleClick}
+                      >
+                        ≡
+                      </Button>
+                      <Menu
+                        id="basic-menu"
+                        anchorEl={anchorEl}
+                        open={open}
+                        onClose={handleClose}
+                        MenuListProps={{
+                          "aria-labelledby": "basic-button",
+                        }}
+                      >
+                        <MenuItem
+                          onClick={handleClose}
+                          className="nav__menu-item"
+                        >
+                          <p className="nav__menu-itemText">Profile </p>
+                        </MenuItem>
+                        <MenuItem
+                          onClick={handleClose}
+                          className="nav__menu-item"
+                        >
+                          My account
+                        </MenuItem>
+                        <MenuItem
+                          className="nav__menu-item"
+                          onClick={(event) => {
+                            event.preventDefault();
+                            logout(loginState, navigate, setErrorHandler);
+                            localStorage.setItem("email", "");
+                          }}
+                        >
+                          Logout
+                        </MenuItem>
+                      </Menu>
+                    </div>
                   </div>
                 ) : (
                   <div className={classes.auth}>
@@ -133,4 +199,18 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+const mapStateToProps = (state) => {
+  return {
+    user: state,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: (loginState, history, setErrorHandler) => {
+      dispatch(LogOutAuthAction(loginState, history, setErrorHandler));
+    },
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Nav);
