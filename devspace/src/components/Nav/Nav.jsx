@@ -75,6 +75,7 @@ const Nav = (props) => {
     hasError: false,
     message: "",
   });
+  const authLocalStorage = localStorage.getItem("auth");
 
   console.log("User: ", user);
   console.log(user[0].data.currentUser.firstName);
@@ -110,7 +111,7 @@ const Nav = (props) => {
                     FAQ
                   </Link>
                 </div>
-                {user ? (
+                {authLocalStorage ? (
                   <div className={classes.auth}>
                     Welcome, {user[0].data.currentUser.firstName}
                     <div>
@@ -147,9 +148,8 @@ const Nav = (props) => {
                         <MenuItem
                           className="nav__menu-item"
                           onClick={(event) => {
-                            event.preventDefault();
-                            logout(loginState, navigate, setErrorHandler);
-                            localStorage.setItem("email", "");
+                            localStorage.removeItem("auth");
+                            window.location.reload(true);
                           }}
                         >
                           Logout
