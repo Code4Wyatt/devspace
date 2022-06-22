@@ -5,6 +5,8 @@ import { addCurrentUserAction } from "../../redux/actions/UserAction";
 import Nav from "../../components/Nav/Nav";
 import abstract from "../../assets/abstract.png";
 import geometric from "../../assets/geometric.png";
+import global from "../../assets/global.png";
+import network from "../../assets/network.png";
 import { Container, Grid, Card, Typography } from "@material-ui/core";
 
 const Home = (props) => {
@@ -47,8 +49,8 @@ const Home = (props) => {
   return (
     <>
       <main>
-        <div className="home__banner">
-          {/* <img src={abstract} className="abstract" /> */}
+        <img src={network} className="network" />
+        <div className="home__banner d-flex">
           <Typography
             variant="h1"
             component="h2"
@@ -71,7 +73,7 @@ const Home = (props) => {
             columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             className="mission__statement-grid"
           >
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Typography
                 variant="h4"
                 component="h2"
@@ -79,11 +81,8 @@ const Home = (props) => {
               >
                 Find the latest developer talent, globally.
               </Typography>
-              {/* <Card variant="outlined" className="mission__statement-cards">
-                <p>Discover the latest and greatest graduates in multiple disciplines</p>
-              </Card> */}
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Typography
                 variant="h4"
                 component="h2"
@@ -91,36 +90,25 @@ const Home = (props) => {
               >
                 Connect with employers, build a network.
               </Typography>
-              {/* <Card variant="outlined" className="mission__statement-cards">
-                <p>Hi There</p>
-              </Card> */}
             </Grid>
-            <Grid item xs={6}>
+            <Grid item xs={4}>
               <Typography
-                variant="h4"
+                variant="h2"
                 component="h2"
                 className="mission__statement-statement"
               >
                 Developer portal to display projects and skills.
               </Typography>
-              {/* <Card variant="outlined" className="mission__statement-cards">
-                <p>Hi There</p>
-              </Card> */}
-            </Grid>
-            <Grid item xs={6}>
-              <Typography
-                variant="h4"
-                component="h2"
-                className="mission__statement-statement"
-              >
-                Employer data to find the most suitable talent.
-              </Typography>
-              {/* <Card variant="outlined" className="mission__statement-cards">
-                <p>Hi There</p>
-              </Card> */}
             </Grid>
           </Grid>
         </div>
+        {/* <div>
+          <Typography variant="h4" component="h4">
+            Our mission is to unite newfound talent in technology, with the most
+            suited position. Aiming to make the process easier for both finding
+            that dream role, or desired developer.
+          </Typography>
+        </div> */}
       </main>
     </>
   );

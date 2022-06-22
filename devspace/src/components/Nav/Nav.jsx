@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   logo: {
     flexGrow: "1",
     cursor: "pointer",
-    color: "#F2BD4B",
+    color: "#AE2052",
   },
   drawer: {
     color: "white"
