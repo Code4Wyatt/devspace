@@ -1,10 +1,8 @@
-.card {
-    height: 90%;
-    width: 62vw;
-    margin: 10px;
-    font-size: 1em;
+.table {
+    background-color: rgba(0, 38, 255, 0.119) !important;
+}
 
-    .card-title {
-        color: black;
-    }
+.pagination {
+    width: 100%;
+    justify-content: start;
 }

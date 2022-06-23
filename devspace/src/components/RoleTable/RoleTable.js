@@ -7,6 +7,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
+import './RoleTable.scss';
 
 const columns = [
   { id: 'jobTitle', label: 'Job Title', minWidth: 170 },
@@ -16,6 +17,14 @@ const columns = [
     label: 'Location',
     minWidth: 170,
     align: 'right',
+    format: (value) => value.toLocaleString('en-US'),
+  },
+  {
+    id: 'techStack',
+    label: 'Tech Stack',
+    minWidth: 170,
+    align: 'right',
+    justifyContent: 'space-between',
     format: (value) => value.toLocaleString('en-US'),
   },
   {
@@ -32,6 +41,13 @@ const columns = [
     align: 'right',
     format: (value) => value.toFixed(2),
   },
+  {
+    id: 'createdAt',
+    label: 'createdAt',
+    minWidth: 170,
+    align: 'right',
+    format: (value) => value.toFixed(2),
+  },
 ];
 
 function createData(
@@ -40,13 +56,15 @@ function createData(
   location,
   salary,
   positionType,
+  createdAt,
 ) {
   return {
   jobTitle,
   company,
   location,
   salary,
-  positionType,
+    positionType,
+  createdAt,
   };
 }
 
@@ -68,8 +86,8 @@ export default function StickyHeadTable(props) {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden' }}>
-      <TableContainer sx={{ maxHeight: 440 }}>
+    <Paper sx={{ width: '100%', overflow: 'hidden' }} className="table">
+      <TableContainer sx={{ maxHeight: 440 }}  >
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -77,7 +95,7 @@ export default function StickyHeadTable(props) {
                 <TableCell
                   key={column.id}
                   align={column.align}
-                  style={{ minWidth: column.minWidth }}
+                  style={{ minWidth: column.minWidth, backgroundColor: 'black', color: 'white' }}
                 >
                   {column.label}
                 </TableCell>
@@ -90,11 +108,11 @@ export default function StickyHeadTable(props) {
               .map((role) => {
                 console.log(role)
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={role.code}>
-                    {columns.map((column) => {
+                  <TableRow hover role="checkbox" tabIndex={-1} key={role.code} >
+                    {columns.map((column, i) => {
                       const value = role[column.id];
                       return (
-                        <TableCell key={column.id} align={column.align}>
+                        <TableCell key={i} align={column.align} style={{ color: 'white', cursor: 'hand' }} onClick={() => console.log(props.roles[i]._id)}>
                           {column.format && typeof value === 'number'
                             ? column.format(value)
                             : value}
@@ -115,6 +133,7 @@ export default function StickyHeadTable(props) {
         page={page}
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
+        className="pagination"
       />
     </Paper>
   );
