@@ -8,8 +8,6 @@ import Button from '@mui/material/Button'
 const Role = (props) => {
   const [role, setRole] = useState([])
   let postId = useParams()
-  console.log(postId.id)
-  console.log(role?.role?.company)
   
   useEffect(() => {
     const fetchRole = async () => {
@@ -17,18 +15,21 @@ const Role = (props) => {
         let response = await fetch(`http://localhost:9000/roles/${postId.id}`)
         let data = await response.json()
         setRole(data)
-        console.log("Role", data)
       } catch (error) {
         console.log(error);
       }
     }
     fetchRole()
-  }, [])
+  }, [postId.id])
 
   return (
     <>
       <div className="role__section">
-        <Button variant="outlined" className="role__section-applyBtn">Apply</Button>
+        <Stack>
+          <Button variant="outlined" className="role__section-applyBtn">Apply</Button>
+          <Button variant="outlined" className="role__section-save">Save</Button>
+        </Stack>
+        
         <Typography
           variant="h2"
           component="h2"
@@ -60,6 +61,13 @@ const Role = (props) => {
         <Typography
           variant="h5"
           component="h5"
+          className="role__section-salary animate-charcter"
+        >
+          {role?.role?.salary}
+        </Typography>
+        <Typography
+          variant="h1"
+          component="h1"
           className="role__section-description"
         >
           {role?.role?.description}

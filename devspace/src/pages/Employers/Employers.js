@@ -1,7 +1,22 @@
 import "./Employers.scss"
-import { Container, TextField, Typography } from "@material-ui/core";
+import { Container, TextField, Typography } from "@material-ui/core"
+import { useState, useEffect } from "react"
 
 const Employers = () => {
+
+  useEffect(() => {
+    const fetchEmployers = async () => {
+      try {
+        let employers = await fetch(`http://localhost:9000/employer/all`)
+        let data = await employers.json()
+        console.log(data)
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    fetchEmployers()
+  }, [])
+
   return (
     <>
       <div className="employer__section">

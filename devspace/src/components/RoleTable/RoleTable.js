@@ -76,7 +76,7 @@ export default function StickyHeadTable(props) {
   const [rowsPerPage, setRowsPerPage] = React.useState(10);
   const navigate = useNavigate();
 
-  console.log(props.roles);
+  // console.log(props.roles);
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);

@@ -31,15 +31,29 @@
         font-size: 2vw !important;
     }
 
+    .role__section-salary {
+        position: absolute;
+        top: 35vh;
+        left: 2vw;
+        font-size: 2vw !important;
+    }
+
     .role__section-description {
         position: absolute;
         top: 40vh;
         margin: 35px;
+        font-size: 2vw !important;
     }
 
     .role__section-applyBtn {
         position: absolute;
         top: 12vh;
         right: 3vw;
+    }
+
+    .role__section-save {
+        position: absolute;
+            top: 12vh;
+            right: 9vw;
     }
 }
