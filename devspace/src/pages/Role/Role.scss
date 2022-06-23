@@ -1,0 +1,45 @@
+.role__section {
+    background-color: #22254b !important;
+    height: 100vh;
+    color: white !important;
+
+    .role__section-title {
+        position: absolute;
+        font-size: 5vw !important;
+        top: 10vh;
+        left: 2vw;
+    }
+
+    .role__section-jobTitle {
+        position: absolute;
+        top: 20vh;
+        left: 2vw;
+        font-size: 2vw !important;
+    }
+
+    .role__section-location {
+        position: absolute;
+        top: 24vh;
+        left: 2vw;
+        font-size: 2vw !important;
+    }
+
+    .role__section-positionType {
+        position: absolute;
+        top: 28vh;
+        left: 2vw;
+        font-size: 2vw !important;
+    }
+
+    .role__section-description {
+        position: absolute;
+        top: 40vh;
+        margin: 35px;
+    }
+
+    .role__section-applyBtn {
+        position: absolute;
+        top: 12vh;
+        right: 3vw;
+    }
+}

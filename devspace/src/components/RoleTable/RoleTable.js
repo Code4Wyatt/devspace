@@ -44,7 +44,7 @@ const columns = [
   },
   {
     id: "createdAt",
-    label: "createdAt",
+    label: "Posted",
     minWidth: 170,
     align: "right",
     format: (value) => value.toFixed(2),

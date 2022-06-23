@@ -11,6 +11,7 @@ import Login from "./pages/Login/Login.js"
 import Developers from "./pages/Developers/Developers.js"
 import Employers from "./pages/Employers/Employers.js"
 import Roles from "./pages/Roles/Roles.js"
+import Role from "./pages/Role/Role.js"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/developers" element={<Developers />} />
         <Route path="/employers" element={<Employers />} />
         <Route path="/roles" element={<Roles />} />
+        <Route path="/role/:id" element={<Role />} />
       </Routes>
     </Router>
   );
