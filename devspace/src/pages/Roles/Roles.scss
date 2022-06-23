@@ -15,4 +15,14 @@
         left: -8%;
         width: 20vw !important;
     }
+
+    .roles__container {
+        display: flex;
+        position: relative;
+        top: 20%;
+
+        .roles__container-card {
+            height: 2vw !important;
+        }
+    }
 }

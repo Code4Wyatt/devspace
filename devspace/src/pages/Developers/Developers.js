@@ -1,5 +1,4 @@
 import "./Developers.scss";
-import React from "react";
 import { Container, TextField, Typography } from "@material-ui/core";
 
 
