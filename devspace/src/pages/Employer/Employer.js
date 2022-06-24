@@ -1,12 +1,12 @@
 import "./Employer.scss";
 import { useState, useEffect } from "react";
-import { Box, Typography } from "@material-ui/core";
+import { Box, Typography, Grid } from "@material-ui/core";
 import { useParams } from "react-router-dom";
 
 const Employer = (props) => {
   const [employer, setEmployer] = useState([]);
-  let employerId = useParams();
-  console.log(employer?.companyDescription);
+    let employerId = useParams(); 
+    let roles = employer.rolesAvailable
 
   useEffect(() => {
     const fetchEmployer = async () => {
@@ -16,7 +16,6 @@ const Employer = (props) => {
         );
         let data = await employer.json();
         setEmployer(data);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -38,6 +37,13 @@ const Employer = (props) => {
       <Typography className="employer__page-description">
         {employer?.companyDescription}
       </Typography>
+          <h2 className="positions-title">Positions Available</h2>
+          <Grid>
+  {roles && roles.map((role) => {
+              return <h1>Role</h1>
+          })}
+          </Grid>
+        
     </div>
   );
 };
