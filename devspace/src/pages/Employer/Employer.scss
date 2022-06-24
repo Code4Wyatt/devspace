@@ -1,0 +1,27 @@
+.employer__page {
+  background-color: #22254b !important;
+  height: 100vh;
+  position: absolute;
+  top: 5%;
+
+  .employer__page-logo {
+    position: relative;
+    top: 5%;
+    left: 1%;
+    max-height: 10vw;
+  }
+  .employer__page-company {
+    position: relative;
+    top: 5vh;
+    width: 90%;
+    margin: 20px;
+    text-transform: uppercase;
+  }
+  .employer__page-description {
+    position: relative;
+    top: 5vh;
+    width: 90%;
+    margin: 20px;
+    font-size: 2vw;
+  }
+}

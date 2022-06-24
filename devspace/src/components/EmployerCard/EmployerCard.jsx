@@ -6,29 +6,38 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { Link, useNavigate } from "react-router-dom";
+
+
 
 const EmployerCard = (props) => {
-
+  const navigate = useNavigate();
+  console.log("Card Props:", props.employer)
+  function handleClick() {
+                  navigate(`/employers/${props.employer._id}`);
+      }
+  // let shortenedDescription = props.employer.companyDescription.substring(0, 10)
+  console.log(props?.employer?.companyDescription?.substring(0, 30))
   return (
-     <Card sx={{ maxWidth: 345 }}>
+     <Card sx={{ maxWidth: 345 }} className="employer__card">
       <CardMedia
         component="img"
         alt="green iguana"
         height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={props.employer.companyLogo}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
-          Lizard
+        <Typography gutterBottom variant="h5" component="div" color="black">
+          {props.employer.companyName}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+          {props?.employer?.companyDescription?.substring(0, 135)}...
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Button size="small">Favourite</Button>
+        
+        <Button size="small" onClick={handleClick}>explore</Button>
       </CardActions>
     </Card>
   )

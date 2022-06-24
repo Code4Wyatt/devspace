@@ -10,6 +10,7 @@ import Register from "./pages/Register/Register.js"
 import Login from "./pages/Login/Login.js"
 import Developers from "./pages/Developers/Developers.js"
 import Employers from "./pages/Employers/Employers.js"
+import Employer from "./pages/Employer/Employer.js"
 import Roles from "./pages/Roles/Roles.js"
 import Role from "./pages/Role/Role.js"
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/developers" element={<Developers />} />
         <Route path="/employers" element={<Employers />} />
+        <Route path="/employers/:id" element={<Employer />} />
         <Route path="/roles" element={<Roles />} />
         <Route path="/role/:id" element={<Role />} />
       </Routes>
