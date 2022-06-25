@@ -9,6 +9,7 @@ import DevCard from "../../components/DevCard/DevCard";
 
 const Developers = () => {
   const [developers, setDevelopers] = useState([]);
+  console.log(developers.developers)
 
   useEffect(() => {
     const fetchDevelopers = async () => {
@@ -18,7 +19,6 @@ const Developers = () => {
         );
         const data = await allDevelopers.json();
         setDevelopers(data);
-        console.log(data);
       } catch (error) {
         console.log(error);
       }
@@ -48,10 +48,11 @@ const Developers = () => {
             container
             spacing={{ xs: 2, md: 3 }}
             columns={{ xs: 4, sm: 8, md: 12 }}
+            className="devs__container"
           >
-            {Array.from(Array(6)).map((_, index) => (
-              <Grid item xs={2} sm={4} md={4} key={index}>
-                <DevCard />
+            {developers?.developers?.map((developer, i) => (
+              <Grid item xs={2} sm={4} md={4} >
+                <DevCard key={i} developer={developer} />
               </Grid>
             ))}
           </Grid>

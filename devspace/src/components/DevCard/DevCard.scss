@@ -1,0 +1,42 @@
+.dev__card {
+    height: 200px;
+    position: relative;
+    background-color: rgba(0, 221, 255, 0.031) !important;
+    max-width: 600px;
+    .dev__card-avatar {
+        position: relative;
+        top: 2%;
+        left: 2%;
+        height: 70px;
+        width: 70px;
+    }
+
+    .dev__card-social {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .dev__card-name {
+        color: rgb(255, 252, 252) !important;
+        position: absolute;
+        top: 10px;
+        left: 100px;
+    }
+
+    .dev__card-location {
+        position: absolute;
+        top: 35px;
+        left: 100px;
+        
+    }
+
+    .dev__card-statement {
+        padding: 20px;
+    }
+
+    .dev__card-projects {
+        position: relative;
+        left: 20px;
+    }
+}
