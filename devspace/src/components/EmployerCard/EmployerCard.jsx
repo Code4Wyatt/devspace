@@ -34,7 +34,7 @@ const EmployerCard = (props) => {
           {props?.employer?.companyDescription?.substring(0, 135)}...
         </Typography>
       </CardContent>
-      <CardActions>
+      <CardActions className="actions">
         <Button size="small">Favourite</Button>
         
         <Button size="small" onClick={handleClick}>explore</Button>

@@ -5,7 +5,7 @@ import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import EmployerCard from "../../components/EmployerCard/EmployerCard";
-
+import networkit from "../../assets/networkit.png";
 const Employers = () => {
   const [employers, setEmployers] = useState([]);
 
@@ -26,6 +26,7 @@ const Employers = () => {
   return (
     <>
       <div className="employer__section">
+        <img src={networkit} className="networkit" />
         <Typography
           variant="h1"
           component="h2"

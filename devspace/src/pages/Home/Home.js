@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useSelector, connect, useDispatch } from "react-redux";
 import { addCurrentUserAction } from "../../redux/actions/UserAction";
 import Nav from "../../components/Nav/Nav";
-import abstract from "../../assets/abstract.png";
 import geometric from "../../assets/geometric.png";
 import global from "../../assets/global.png";
 import network from "../../assets/network.png";
