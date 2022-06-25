@@ -1,8 +1,8 @@
 .employer__page {
   background-color: #22254b !important;
-  height: 100vh;
+  height: 100vw;
   position: absolute;
-  top: 5%;
+
 
   .employer__page-logo {
     position: relative;
@@ -31,4 +31,20 @@
     top: 5%;
     font-size: 1.5vw;
   }
+
+  .employer__page-positions {
+    position: relative;
+  
+
+    .employer__page-position {
+        position: relative;
+        top: 8vh;
+        left: 8%;
+    }
+  }
+.MuiGrid-item {
+  margin: 20px;
+ width: 2vw;
+}
+
 }

@@ -1,0 +1,30 @@
+.role__card {
+    padding: 10px;
+  .role__card-title {
+    display: flex;
+    justify-content: center;
+  }
+
+  .role__card-location {
+    display: flex;
+    justify-content: center;
+  }
+
+  .role__card-type {
+    display: flex;
+    justify-content: center;
+  }
+
+  .role__card-date {
+      position: relative;
+      top: 180px;
+  }
+
+  .role__card-applicants {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: 10px;
+    left: 90px;
+  }
+}
