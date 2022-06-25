@@ -22,15 +22,15 @@ const EmployerCard = (props) => {
      <Card sx={{ maxWidth: 345 }} className="employer__card">
       <CardMedia
         component="img"
-        alt="green iguana"
+        alt="company logo"
         height="140"
         image={props.employer.companyLogo}
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div" color="black">
+        <Typography gutterBottom variant="h5" component="div" color="white">
           {props.employer.companyName}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="white">
           {props?.employer?.companyDescription?.substring(0, 135)}...
         </Typography>
       </CardContent>

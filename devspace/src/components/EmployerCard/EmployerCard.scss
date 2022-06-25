@@ -1,10 +1,11 @@
 .employer__card {
-    background-color: transparent;
-    border: 1px solid purple;
+    background-color: rgba(0, 242, 255, 0.033) !important;
+    border: 2px solid purple;
     min-height: 373px;
-
+    margin: 10px;
+    
     .actions {
         position: absolute;
-        bottom: -5px;
+        bottom: 5px;
     }
 }
