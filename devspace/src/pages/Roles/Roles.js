@@ -2,7 +2,7 @@ import "./Roles.scss";
 import { useEffect, useState } from "react";
 import { Container, TextField, Typography } from "@material-ui/core";
 import RoleTable from "../../components/RoleTable/RoleTable";
-
+import networkit from "../../assets/networkit.png";
 const Roles = () => {
   const [roles, setRoles] = useState([]);
   console.log(roles);
@@ -24,6 +24,7 @@ const Roles = () => {
   return (
     <>
       <div className="roles__section">
+                <img src={networkit} className="networkit" />
         <Typography
           variant="h1"
           component="h2"

@@ -1,8 +1,9 @@
 .dev__card {
-    height: 200px;
+    height: 100%;
     position: relative;
-    background-color: rgba(0, 221, 255, 0.031) !important;
+    background-color: rgba(4, 8, 111, 0.835) !important;
     max-width: 600px;
+    min-height: 220px;
     .dev__card-avatar {
         position: relative;
         top: 2%;
@@ -38,5 +39,11 @@
     .dev__card-projects {
         position: relative;
         left: 20px;
+        bottom: 10px;
+    }
+    .dev__card-languages {
+        position: relative;
+        left: 20px;
+        bottom: 10px;
     }
 }

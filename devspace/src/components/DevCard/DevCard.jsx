@@ -8,7 +8,9 @@ import { Typography } from "@material-ui/core";
 const DevCard = (props) => {
   let developer = props.developer.developer;
   console.log(props.developer);
-  let projectsLength = props.developer?.projects.length
+  let projectsLength = props.developer?.projects.length;
+
+
   return (
     <Paper elevation={12} className="dev__card">
       <Avatar
@@ -17,16 +19,19 @@ const DevCard = (props) => {
         className="dev__card-avatar"
       />
       <Stack direction="row" spacing={2} className="dev__card-social">
-        <Avatar
-          alt="Developer picture"
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png"
-          className="dev__card-linkedIn"
-        />
-        <Avatar
+        <a href={props.developer.linkedIn}>
+          <Avatar
+            alt="Developer picture"
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/LinkedIn_icon_circle.svg/2048px-LinkedIn_icon_circle.svg.png"
+            className="dev__card-linkedIn"
+          />
+        </a>
+       <a href={props.developer.gitHub}><Avatar
           alt="Developer picture"
           src="https://www.kindpng.com/picc/m/255-2558173_github-logo-png-transparent-png.png"
           className="dev__card-github"
-        />
+        /></a>
+        
       </Stack>
       <Typography variant="h6" component="h2" className="dev__card-name">
         {props.developer?.firstName} {props.developer?.lastName}
@@ -39,6 +44,9 @@ const DevCard = (props) => {
       </Typography>
       <Typography className="dev__card-projects">
         Projects: {projectsLength}
+      </Typography>
+      <Typography className="dev__card-languages">
+        Main Technologies: {props.developer?.languages}
       </Typography>
     </Paper>
   );
