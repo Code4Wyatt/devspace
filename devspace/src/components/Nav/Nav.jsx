@@ -80,7 +80,7 @@ const Nav = (props) => {
   const jwtToken = useSelector((state) => state.authState.user.accessToken);
 
   console.log("User: ", user);
-  console.log(user[0].data.currentUser.firstName);
+  console.log(user[0]?.data.currentUser.firstName);
 
   return (
     <>
@@ -115,7 +115,7 @@ const Nav = (props) => {
                 </div>
                 {authLocalStorage ? (
                   <div className={classes.auth}>
-                    <p className="auth">Welcome, {user[0].data.currentUser.firstName}</p>
+                    <p className="auth">Welcome, {user[0]?.data.currentUser.firstName}</p>
                     <div>
                       <Button
                           id="basic-button"

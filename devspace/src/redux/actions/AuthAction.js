@@ -21,11 +21,11 @@ const RegisterAuthAction = (userState, navigate, setErrorHandler) => {
       if (error.response) {
         dispatch({
           type: AuthActionType.REGISTER_FAIL,
-          payload: error.response.data.message,
+          payload: error.response.data,
         });
         setErrorHandler({
           hasError: true,
-          message: error.response.data.message,
+          message: error.response.data,
         });
       }
     }

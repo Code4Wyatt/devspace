@@ -46,7 +46,7 @@ const DevLogin = (props) => {
               }}
             >
               <div className="form-group">
-                <label for="InputEmail">Email Address</label>
+                <label htmlFor="InputEmail">Email Address</label>
                 <input
                   type="email"
                   className="form-control form-control-sm"
@@ -59,7 +59,7 @@ const DevLogin = (props) => {
                 
               </div>
               <div className="form-group">
-                <label for="InputPassword1">Password</label>
+                <label htmlFor="InputPassword1">Password</label>
                 <input
                   type="password"
                   className="form-control form-control-sm"

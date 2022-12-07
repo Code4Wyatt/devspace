@@ -1,4 +1,4 @@
-import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/css/bootstrap.min.css"
 import {
   BrowserRouter as Router,
   Routes,
@@ -9,6 +9,7 @@ import Home from "./pages/Home/Home.js"
 import Register from "./pages/Register/Register.js"
 import Login from "./pages/Login/Login.js"
 import Developers from "./pages/Developers/Developers.js"
+import Developer from './pages/Developer/Developer.js'
 import Employers from "./pages/Employers/Employers.js"
 import Employer from "./pages/Employer/Employer.js"
 import Roles from "./pages/Roles/Roles.js"
@@ -23,6 +24,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/developers" element={<Developers />} />
+        <Route path="/developers/:id" element={<Developer />} />
         <Route path="/employers" element={<Employers />} />
         <Route path="/employers/:id" element={<Employer />} />
         <Route path="/roles" element={<Roles />} />

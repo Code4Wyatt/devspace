@@ -7,13 +7,14 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import DevCard from "../../components/DevCard/DevCard";
 import networkit from "../../assets/networkit.png";
+import { Link, useNavigate } from "react-router-dom";
 
 const Developers = () => {
   const [developers, setDevelopers] = useState([]);
-  console.log(developers.developers)
+  console.log(developers.developers);
 
   useEffect(() => {
-    const fetchDevelopers = async () => {
+    const fetchAllDevelopers = async () => {
       try {
         const allDevelopers = await fetch(
           `http://localhost:9000/developer/all`
@@ -24,7 +25,7 @@ const Developers = () => {
         console.log(error);
       }
     };
-    fetchDevelopers();
+    fetchAllDevelopers();
   }, []);
 
   return (
